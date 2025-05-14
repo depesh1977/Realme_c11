@@ -45,8 +45,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
 
 # bootctrl HAL    
 PRODUCT_PACKAGES += \
@@ -67,9 +67,9 @@ PRODUCT_PACKAGES_DEBUG += \
     
 # Fastbootd
 PRODUCT_PACKAGES += \
-    fastbootd \
     android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    fastbootd
 
 # Hidl
 PRODUCT_ENFORCE_VINTF_MANIFEST := true 
