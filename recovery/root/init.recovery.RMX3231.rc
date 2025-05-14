@@ -37,3 +37,8 @@ on fs
    # copy /proc/cmdline /dev/urandom
    # copy /prop.default /dev/urandom
     copy /dev/block/by-name/sysdump /dev/urandom
+
+on boot
+    start boot-hal-1-1
+    start health-hal-2-1
+    setprop sys.usb.config adb
