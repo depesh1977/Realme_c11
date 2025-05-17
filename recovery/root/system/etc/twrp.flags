@@ -4,10 +4,10 @@
 # <mount_point>      <fstype>  <device>        <device2>                  <flags>
 
 # Dynamic partitions
-/system                 ext4    /dev/block/mapper/system_a            		flags=backup=1;wipeingui;display="System"
-/system_ext             ext4	/dev/block/mapper/system_ext_a			    flags=backup=1;wipeingui;display="System_Ext"
-/vendor             	ext4    /dev/block/mapper/vendor_a                  flags=backup=1;wipeingui;display="Vendor"
-/product            	ext4    /dev/block/mapper/product_a           		flags=backup=1;wipeingui;display="Product"
+/system                 ext4    /dev/block/mapper/system_a            		flags=backup=1;logical;wipeingui;display="System"
+/system_ext             ext4	/dev/block/mapper/system_ext_a			    flags=backup=1;logical;wipeingui;display="System_Ext"
+/vendor             	ext4    /dev/block/mapper/vendor_a                  flags=backup=1;logical;wipeingui;display="Vendor"
+/product            	ext4    /dev/block/mapper/product_a           		flags=backup=1;logical;wipeingui;display="Product"
 
 # Images
 /system_image	    	emmc  	 /dev/block/mapper/system_a			        flags=backup=1;flashimg=1;display="System Image"
@@ -20,16 +20,16 @@
 /spl                    emmc     /dev/block/mmcblk0boot0
 /spl_bk                 emmc     /dev/block/mmcblk0boot1
 /uboot                  emmc     /dev/block/by-name/uboot            		flags=slotselect
-/uboot_log              emmc     /dev/block/by-name/uboot_log               flags=backup=1;display="UBoot Log"
+/uboot_log              emmc     /dev/block/by-name/uboot_log             
 /sml                    emmc     /dev/block/by-name/sml				        flags=slotselect
 /tos                    emmc     /dev/block/by-name/trustos                 flags=slotselect
 /teecfg                 emmc     /dev/block/by-name/teecfg                  flags=slotselect
-/vbmeta                 emmc     /dev/block/by-name/vbmeta               	flags=backup=1;flashimg=1;display="VBMeta";slotselect
-/vbmeta_system          emmc     /dev/block/by-name/vbmeta_system        	flags=backup=1;flashimg=1;display="VBMeta System";slotselect
-/vbmeta_vendor          emmc     /dev/block/by-name/vbmeta_vendor		    flags=backup=1;flashimg=1;display="VBMeta Vendor";slotselect
-/vbmeta_product         emmc     /dev/block/by-name/vbmeta_product		    flags=backup=1;flashimg=1;display="VBMeta Product";slotselect
-/vbmeta_system_ext      emmc     /dev/block/by-name/vbmeta_system_ext     	flags=backup=1;flashimg=1;display="VBMeta System_Ext";slotselect
-/dtbo                   emmc     /dev/block/by-name/dtbo                    flags=backup=1;flashimg=1;display="DTBO";slotselect
+/vbmeta                 emmc     /dev/block/by-name/vbmeta               	flags=slotselect
+/vbmeta_system          emmc     /dev/block/by-name/vbmeta_system        	flags=slotselect
+/vbmeta_vendor          emmc     /dev/block/by-name/vbmeta_vendor		    flags=slotselect
+/vbmeta_product         emmc     /dev/block/by-name/vbmeta_product		    flags=slotselect
+/vbmeta_system_ext      emmc     /dev/block/by-name/vbmeta_system_ext     	flags=slotselect
+/dtbo                   emmc     /dev/block/by-name/dtbo                    flags=slotselect
 /ltedsp                 emmc     /dev/block/by-name/l_ldsp                  flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltegdsp                emmc     /dev/block/by-name/l_gdsp			        flags=backup=1;subpartitionof=/ltemodem;slotselect
 /ltemodem               emmc     /dev/block/by-name/l_modem                 flags=backup=1;display="Modem (IMEI)";slotselect
@@ -38,24 +38,24 @@
 /ltefixnv2              emmc     /dev/block/by-name/l_fixnv2                flags=backup=1;subpartitionof=/ltemodem;slotselect
 /lteruntimenv1          emmc     /dev/block/by-name/l_runtimenv1            flags=backup=1;subpartitionof=/ltemodem;slotselect
 /lteruntimenv2          emmc     /dev/block/by-name/l_runtimenv2            flags=backup=1;subpartitionof=/ltemodem;slotselect
-/wcnmodem               emmc     /dev/block/by-name/wcnmodem                flags=slotselect
-/gnssmodem        		emmc     /dev/block/by-name/gpsgl			        flags=slotselect
-/gnssbdmodem            emmc     /dev/block/by-name/gpsbd                   flags=slotselect
-/pmsys                  emmc     /dev/block/by-name/pm_sys                  flags=slotselect
+/wcnmodem               emmc     /dev/block/by-name/wcnmodem                flags=backup=1;slotselect
+/gnssmodem        		emmc     /dev/block/by-name/gpsgl			        flags=backup=1;slotselect
+/gnssbdmodem            emmc     /dev/block/by-name/gpsbd                   flags=backup=1;slotselect
+/pmsys                  emmc     /dev/block/by-name/pm_sys                 
 /misc                   emmc     /dev/block/by-name/misc
 /miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N)"
 /boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;flashimg=1;slotselect
-/persist                emmc     /dev/block/by-name/persist              	flags=backup=1;display="Persist"
-/logo                   emmc     /dev/block/by-name/logo                    flags=backup=1;flashimg=1;display="Logo"
-/fbootlogo              emmc     /dev/block/by-name/fbootlogo               flags=backup=1;flashimg=1;display="Fastboot Logo"
+/persist                emmc     /dev/block/by-name/persist              
+/logo                   emmc     /dev/block/by-name/logo                    
+/fbootlogo              emmc     /dev/block/by-name/fbootlogo               
 /metadata              	ext4     /dev/block/by-name/metadata              	flags=backup=1;display="Metadata"
-/socko                 	ext4     /dev/block/by-name/socko                 	flags=backup=1;display="Socko";slotselect
-/socko_image            emmc     /dev/block/by-name/socko_a                 flags=backup=1;flashimg=1;display="Socko Image"
-/odmko                 	ext4     /dev/block/by-name/odmko                 	flags=backup=1;display="Odmko";slotselect
-/odmko_image            emmc     /dev/block/by-name/odmko_a                 flags=backup=1;flashimg=1;display="Odmko Image"
-/prodnv            	    ext4     /dev/block/by-name/prodnv                	flags=backup=1;display="ProdNV"
+/socko                 	ext4     /dev/block/by-name/socko                 	flags=slotselect
+/socko_image            emmc     /dev/block/by-name/socko_a                 
+/odmko                 	ext4     /dev/block/by-name/odmko                 	flags=slotselect
+/odmko_image            emmc     /dev/block/by-name/odmko_a                 
+/prodnv            	    ext4     /dev/block/by-name/prodnv                	
 /prodnv_image           emmc     /dev/block/by-name/prodnv       		    flags=backup=1;flashimg=1;display="ProdNV Image"
-/sysdumpdb              emmc     /dev/block/by-name/sysdumpdb               flags=backup=1;display="Sysdumpdb"
+/sysdumpdb              emmc     /dev/block/by-name/sysdumpdb              
 
 # Removable storage
 /external_sd	        vfat     /dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=fsflags=utf8;storage;wipeingui;removable
