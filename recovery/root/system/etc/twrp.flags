@@ -31,7 +31,7 @@
 /gnssmodem        		  emmc     /dev/block/by-name/gpsgl			              flags=backup=1;slotselect
 /gnssbdmodem            emmc     /dev/block/by-name/gpsbd                   flags=backup=1;slotselect
 /miscdata               emmc     /dev/block/by-name/miscdata                flags=backup=1;display="Miscdata (S/N)"
-/boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="Boot";flashimg=1;slotselect            
+/boot                   emmc     /dev/block/by-name/boot                    flags=backup=1;display="Boot";flashimg=1        
 /metadata              	ext4     /dev/block/by-name/metadata              	flags=backup=1;display="Metadata"
 /prodnv            	    ext4     /dev/block/by-name/prodnv                  flags=backup=1;flashimg=1;display="ProdNV" 	
 
