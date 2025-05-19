@@ -104,6 +104,9 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libcap.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
+
+# Fix fastboot reboot
+TW_NO_FASTBOOT_BOOT := true
     
 # Additional Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
