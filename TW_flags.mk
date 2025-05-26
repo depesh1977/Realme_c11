@@ -25,6 +25,7 @@ TW_NO_SCREEN_BLANK := true
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 
 # resetprop & repacktools
 TW_INCLUDE_RESETPROP := true
