@@ -9,7 +9,7 @@ RELAX_USES_LIBRARY_CHECK=true
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-#TW_EXTRA_LANGUAGES := true
+TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := ru
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
